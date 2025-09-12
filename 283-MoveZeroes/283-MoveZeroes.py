@@ -1,20 +1,13 @@
-# Last updated: 9/12/2025, 9:39:44 PM
+# Last updated: 9/12/2025, 9:46:57 PM
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
-        ans=[]
-        count=0
-        for i in nums:
-            if i == 0:
-                count+=1
-            else:
-                ans.append(i)
 
+        j=0
+        for i in range(len(nums)):
+            if nums[i] !=0:
+                nums[i],nums[j]=nums[j],nums[i]
+                j+=1
 
-        for i in range(count):
-            ans.append(0)
-        
-        for i in range(len(ans)):
-            nums[i]=ans[i]
